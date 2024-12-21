@@ -267,6 +267,7 @@ PRODUCT_COPY_FILES += \
 # ramdisk
 PRODUCT_PACKAGES += \
     fstab.samsungexynos8895 \
+    fstab.samsungexynos8895_ramdisk \
     init.baseband.rc \
     init.recovery.samsungexynos8895.rc \
     init.samsung.rc \

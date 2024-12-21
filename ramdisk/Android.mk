@@ -8,6 +8,15 @@ LOCAL_SRC_FILES		:= etc/fstab.samsungexynos8895
 LOCAL_MODULE_PATH	:= $(TARGET_OUT_VENDOR_ETC)
 include $(BUILD_PREBUILT)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE		:= fstab.samsungexynos8895_ramdisk
+LOCAL_MODULE_STEM	:= fstab.samsungexynos8895
+LOCAL_MODULE_TAGS	:= optional
+LOCAL_MODULE_CLASS	:= ETC
+LOCAL_SRC_FILES		:= etc/fstab.samsungexynos8895
+LOCAL_MODULE_PATH	:= $(TARGET_RAMDISK_OUT)
+include $(BUILD_PREBUILT)
+
 # Init scripts
 
 include $(CLEAR_VARS)
