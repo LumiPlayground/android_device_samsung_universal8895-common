@@ -96,11 +96,13 @@ vendor/lib64/libwrappergps.so
 vendor/lib/hw/gatekeeper.exynos8895.so
 vendor/lib64/hw/gatekeeper.exynos8895.so
 
+# Graphics - From A202KKKU8CUL3
+vendor/lib/egl/libGLES_mali.so|1b5e7eed8562f120a441787cf3954f8a
+vendor/lib64/egl/libGLES_mali.so|9954a3fdee543e9ca46104ef8e79119f
+
 # Graphics
-vendor/lib/egl/libGLES_mali.so
 vendor/lib/libRSDriverArm.so
 vendor/lib/libmpp.so
-vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/libRSDriverArm.so
 vendor/lib64/libmpp.so
 
