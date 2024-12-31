@@ -43,7 +43,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/system.prop
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SOC := exynos8895
-TARGET_BOOTLOADER_BOARD_NAME := universal8895
+TARGET_BOOTLOADER_BOARD_NAME := exynos8895
 BOARD_VENDOR := samsung
 
 # Architecture
@@ -168,7 +168,3 @@ TARGET_LD_SHIM_LIBS += \
     /system/lib64/libblurdetection_interface.so|/vendor/lib64/idev0_shim.so \
     /system/lib/libfocuspeaking_interface.so|/vendor/lib/idev0_shim.so \
     /system/lib64/libfocuspeaking_interface.so|/vendor/lib64/idev0_shim.so \
-    /system/vendor/lib64/libexynosdisplay.so|/system/vendor/lib64/libexynosdisplay_shim.so \
-    /system/vendor/lib/libexynosdisplay.so|/system/vendor/lib/libexynosdisplay_shim.so \
-    /system/vendor/lib64/hw/hwcomposer.exynos5.so|/system/vendor/lib64/libexynosdisplay_shim.so \
-    /system/vendor/lib/hw/hwcomposer.exynos5.so|/system/vendor/lib/libexynosdisplay_shim.so

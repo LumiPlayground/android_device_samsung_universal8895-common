@@ -78,28 +78,17 @@ sed -i 's/str_parms_get_str/str_parms_get_mod/g' $BLOB_ROOT/lib/hw/audio.primary
 # Audio Drop SoundTrigger HAL
 "${PATCHELF}" --remove-needed libaudio_soundtrigger.so $BLOB_ROOT/lib/hw/audio.primary.exynos8895.so
 
-# HWC wants old libutils
-"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/vendor/lib64/libexynosdisplay.so
-"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/vendor/lib/libexynosdisplay.so
-"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/vendor/lib64/hw/hwcomposer.exynos5.so
-"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/vendor/lib/hw/hwcomposer.exynos5.so
-
 # Remove libhidltransport dependencie
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib/android.hardware.gnss@1.0.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib/android.hardware.gnss@1.1.so
-"${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib/libGrallocWrapper.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib/libskeymaster.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib/vendor.samsung.hardware.gnss@1.0.so
-"${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib64/android.hardware.gnss@1.0.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib64/android.hardware.gnss@1.1.so
-"${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib64/libGrallocWrapper.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib64/libskeymaster.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib64/vendor.samsung.hardware.gnss@1.0.so
-"${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/lib64/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/vendor/bin/hw/vendor.samsung.hardware.gnss@1.0-service
-"${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/vendor/bin/hw/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0-service
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/vendor/lib/libskeymaster3device.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/vendor/lib/libstagefright_bufferqueue_helper_vendor.so
 "${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/vendor/lib/libstagefright_omx_vendor.so
@@ -117,11 +106,9 @@ sed -i 's/str_parms_get_str/str_parms_get_mod/g' $BLOB_ROOT/lib/hw/audio.primary
 "${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/lib/android.hardware.gnss@1.0.so
 "${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/lib/android.hardware.gnss@1.1.so
 "${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/lib/vendor.samsung.hardware.gnss@1.0.so
-"${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/lib/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0.so
 "${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/lib64/android.hardware.gnss@1.0.so
 "${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/lib64/android.hardware.gnss@1.1.so
 "${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/lib64/vendor.samsung.hardware.gnss@1.0.so
-"${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/lib64/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0.so
 "${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 "${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/vendor/lib/libwvhidl.so
 "${PATCHELF}" --remove-needed libhwbinder.so $BLOB_ROOT/vendor/lib64/hw/vendor.samsung.hardware.gnss@1.0-impl.so
