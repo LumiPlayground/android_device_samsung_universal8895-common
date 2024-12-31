@@ -324,6 +324,9 @@ PRODUCT_PACKAGES += \
     libaudioparams_shim \
     libexynoscamera_shim
 
+PRODUCT_PACKAGES += \
+    libc_shim
+
 # stagefright
 PRODUCT_PACKAGES += \
     libgui_vendor
