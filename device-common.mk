@@ -127,6 +127,14 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.2-service \
     android.hardware.graphics.mapper@2.0-impl
 
+PRODUCT_PACKAGES += \
+    libacryl \
+    libGrallocWrapper \
+    libexynosgraphicbuffer \
+    hwcomposer.exynos8895 \
+    gralloc.exynos8895 \
+    libion_exynos
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
@@ -160,6 +168,23 @@ PRODUCT_PACKAGES += \
 # LPM
 PRODUCT_PACKAGES += \
     libsuspend
+
+# OMX
+PRODUCT_PACKAGES += \
+    libstagefrighthw \
+    libExynosOMX_Core \
+    libExynosOMX_Resourcemanager \
+    libOMX.Exynos.AVC.Decoder \
+    libOMX.Exynos.AVC.Encoder \
+    libOMX.Exynos.HEVC.Decoder \
+    libOMX.Exynos.HEVC.Encoder \
+    libOMX.Exynos.MPEG4.Decoder \
+    libOMX.Exynos.MPEG4.Encoder \
+    libOMX.Exynos.VP8.Decoder \
+    libOMX.Exynos.VP8.Encoder \
+    libOMX.Exynos.VP9.Decoder \
+    libOMX.Exynos.VP9.Encoder \
+    libOMX.Exynos.WMV.Decoder
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -296,8 +321,7 @@ PRODUCT_SOONG_NAMESPACES += \
 # Shims
 PRODUCT_PACKAGES += \
     libaudioparams_shim \
-    libexynoscamera_shim \
-    libexynosdisplay_shim
+    libexynoscamera_shim
 
 # stagefright
 PRODUCT_PACKAGES += \
@@ -352,6 +376,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/ramdisk/etc/wifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wifi.rc
+
+include hardware/samsung_slsi-linaro/config/BoardConfig8895.mk
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/universal8895-common/universal8895-common-vendor.mk)
