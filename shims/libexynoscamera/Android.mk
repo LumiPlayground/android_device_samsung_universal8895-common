@@ -24,3 +24,26 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_PROPRIETARY_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SHARED_LIBRARIES := libbinder liblog libui libcutils libutils libcamera_metadata
+LOCAL_SHARED_LIBRARIES += libion_exynos
+
+LOCAL_C_INCLUDES += \
+	$(TOP)/system/media/camera/include \
+	$(TOP)/system/core/libion/kernel-headers \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos5/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/libcamera/8895 \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/libion/include \
+	$(TOP)/hardware/samsung_slsi-linaro/exynos/gralloc3/src \
+	$(TOP)/hardware/libhardware_legacy/include/hardware_legacy \
+	$(TOP)/frameworks/native/libs/ui/include
+
+LOCAL_SRC_FILES := ExynosCameraMemory.cpp
+LOCAL_MODULE := libexynoscamera_gralloc_shim
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
