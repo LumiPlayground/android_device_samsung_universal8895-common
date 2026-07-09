@@ -20,6 +20,7 @@ cc_library_shared {
         "libpuresoftkeymasterdevice",
         "libsoftkeymasterdevice",
         "libutils",
+        "libskeymaster3device",
     ],
 }
 

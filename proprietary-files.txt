@@ -107,11 +107,11 @@ vendor/lib64/libmpp.so
 # Keymaster
 lib/libskeymaster.so
 lib64/libskeymaster.so
-vendor/lib/libskeymaster3device.so
+-vendor/lib/libskeymaster3device.so
 vendor/lib64/hw/keystore.mdfpp.so
 vendor/lib64/libkeymaster_helper.so
 vendor/lib64/libkeymaster_mdfpp.so
-vendor/lib64/libskeymaster3device.so
+-vendor/lib64/libskeymaster3device.so
 
 # LPM - from N975FXXU6ETLL
 bin/lpm|7a1e0b9854b6259e88cc74ab1e7f0c6b3a3827ab

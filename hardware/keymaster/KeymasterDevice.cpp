@@ -26,6 +26,17 @@
 #include <hardware/keymaster2.h>
 #include <hardware/keymaster_defs.h>
 
+namespace skeymaster {
+namespace ng {
+
+using android::hardware::keymaster::V3_0::IKeymasterDevice;
+
+IKeymasterDevice* CreateSKeymasterDevice(keymaster2_device_t* km2_device);
+IKeymasterDevice* CreateSKeymasterDevice(keymaster1_device_t* km1_device);
+
+}  // namespace ng
+}  // namespace skeymaster
+
 namespace android {
 namespace hardware {
 namespace keymaster {
@@ -70,13 +81,15 @@ static IKeymasterDevice* createKeymaster3Device() {
         if (get_keymaster1_dev(&dev, mod)) {
             return nullptr;
         }
-        return ::keymaster::ng::CreateKeymasterDevice(dev);
+        ALOGI("USE_SEC_FEATURE_MDFPP_KEYMASTER is turned on, using skeymaster device.");
+        return ::skeymaster::ng::CreateSKeymasterDevice(dev);
     } else {
         keymaster2_device_t* dev = nullptr;
         if (get_keymaster2_dev(&dev, mod)) {
             return nullptr;
         }
-        return ::keymaster::ng::CreateKeymasterDevice(dev);
+        ALOGI("USE_SEC_FEATURE_MDFPP_KEYMASTER is turned on, using skeymaster device.");
+        return ::skeymaster::ng::CreateSKeymasterDevice(dev);
     }
 }
 
