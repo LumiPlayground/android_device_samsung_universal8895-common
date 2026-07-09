@@ -149,13 +149,10 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/keylayout/gpio_keys.kl:system/usr/keylayout/gpio_keys.kl \
     $(COMMON_PATH)/configs/keylayout/uinput-sec-fp.kl:system/usr/keylayout/uinput-sec-fp.kl
 
-
 # keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0 \
-    android.hardware.keymaster@3.0-service \
-    android.hardware.keymaster@3.0-impl \
-    libkeymaster3device
+    android.hardware.keymaster@3.0-impl.samsung \
+    android.hardware.keymaster@3.0-service.samsung
 
 # Lights
 PRODUCT_PACKAGES += \

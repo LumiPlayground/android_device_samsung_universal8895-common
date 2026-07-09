@@ -1,0 +1,42 @@
+//
+// Copyright (C) 2026 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "android.hardware.keymaster@3.0-impl.samsung",
+    vendor: true,
+    relative_install_path: "hw",
+    srcs: ["KeymasterDevice.cpp"],
+    shared_libs: [
+        "android.hardware.keymaster@3.0",
+        "libcrypto",
+        "libhardware",
+        "libhidlbase",
+        "libkeymaster_portable",
+        "libkeymaster3device",
+        "liblog",
+        "libpuresoftkeymasterdevice",
+        "libsoftkeymasterdevice",
+        "libutils",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.keymaster@3.0-service.samsung",
+    relative_install_path: "hw",
+    vendor: true,
+    init_rc: ["android.hardware.keymaster@3.0-service.samsung.rc"],
+    srcs: ["service.cpp"],
+    shared_libs: [
+        "android.hardware.keymaster@3.0",
+        "libbase",
+        "libcutils",
+        "libdl",
+        "libhardware",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+    ],
+}
